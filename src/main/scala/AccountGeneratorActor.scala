@@ -22,15 +22,24 @@ class AccountGeneratorActorMaster extends Actor with ActorLogging
 
   override def receive: PartialFunction[Any, Unit] = {
 
-    case customerInformation: List[String] =>
-      if(!checkUsername(customerInformation(2))){
-      log.info("Sending customer " +
-      "information with account number to child to create the account")
-      val listOfInformation = (accountNumber + 1).toString :: customerInformation
-      router.route(listOfInformation, sender())}
-      else{
-        log.info("Existing username used.")
-        sender() ! "Username already exists! Try again with a different username"
+    case customerInformation: List[_] =>
+      customerInformation.head match {
+        case string: String =>
+          log.info("Checking if username exists")
+          if (!checkUsername(customerInformation(2).toString)) {
+            log.info("Sending customer " +
+              "information with account number to child to create the account")
+            val listOfInformation = (accountNumber + 1).toString :: customerInformation
+            router.route(listOfInformation, sender())
+          }
+          else {
+            log.info("Existing username used.")
+            sender() ! (customerInformation(2), s"Username ${customerInformation(2)} already exists! Try again with a different username")
+          }
+
+        case _ => log.info("invalid list received")
+          sender() ! "Invalid information!"
+
       }
 
     case Terminated(accountGeneratorActor) =>
@@ -51,7 +60,9 @@ class AccountGeneratorActor extends Actor with ActorLogging {
   override def receive: Receive = {
 
     case listOfInformation: (List[String]) => log.info("Creating User Account")
-      sender() ! CustomerAccount(listOfInformation)
+      val customerAccount = CustomerAccount(listOfInformation)
+      log.info("Account Created Successfully!")
+      sender() ! (customerAccount.username,"Account created successfully!")
 
     case _ => log.info("Was not able to create user account since invalid information received")
       sender() ! "Invalid information!"

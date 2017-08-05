@@ -10,7 +10,7 @@ object CustomerAccount {
     val TWO = 2
     val THREE = 3
     val FOUR = 4
-    
+
     CustomerAccount(listOfInformation.head.toLong, listOfInformation(ONE), listOfInformation(TWO),
       listOfInformation(THREE), listOfInformation(FOUR).toDouble)
   }
