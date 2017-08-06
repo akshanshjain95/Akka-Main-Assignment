@@ -1,10 +1,9 @@
 import akka.actor.{Actor, ActorLogging, Props, Terminated}
 import akka.dispatch.{BoundedMessageQueueSemantics, RequiresMessageQueue}
 import akka.routing.{ActorRefRoutee, RoundRobinRoutingLogic, Router}
-import DatabaseService._
 
 
-class AccountGeneratorActorMaster extends Actor with ActorLogging
+class AccountGeneratorActorMaster(databaseService: DatabaseService) extends Actor with ActorLogging
   with RequiresMessageQueue[BoundedMessageQueueSemantics] {
 
   var accountNumber = 0
@@ -13,7 +12,7 @@ class AccountGeneratorActorMaster extends Actor with ActorLogging
     log.info("Creating AccountGenerator routees")
     val FIVE = 5
     val accountGeneratorRoutees = Vector.fill(FIVE) {
-      val routeeAccountGenerator = context.actorOf(Props[AccountGeneratorActor])
+      val routeeAccountGenerator = context.actorOf(AccountGeneratorActor.props(databaseService))
       context watch routeeAccountGenerator
       ActorRefRoutee(routeeAccountGenerator)
     }
@@ -26,7 +25,7 @@ class AccountGeneratorActorMaster extends Actor with ActorLogging
       customerInformation.head match {
         case string: String =>
           log.info("Checking if username exists")
-          if (!checkUsername(customerInformation(2).toString)) {
+          if (!databaseService.checkUsername(customerInformation(2).toString)) {
             log.info("Sending customer " +
               "information with account number to child to create the account")
             val listOfInformation = (accountNumber + 1).toString :: customerInformation
@@ -55,13 +54,14 @@ class AccountGeneratorActorMaster extends Actor with ActorLogging
 }
 
 
-class AccountGeneratorActor extends Actor with ActorLogging {
+class AccountGeneratorActor(databaseService: DatabaseService) extends Actor with ActorLogging {
 
   override def receive: Receive = {
 
     case listOfInformation: (List[String]) => log.info("Creating User Account")
       val customerAccount = CustomerAccount(listOfInformation)
       log.info("Account Created Successfully!")
+      databaseService.addToDatabase(customerAccount.username, customerAccount)
       sender() ! (customerAccount.username,"Account created successfully!")
 
     case _ => log.info("Was not able to create user account since invalid information received")
@@ -71,6 +71,12 @@ class AccountGeneratorActor extends Actor with ActorLogging {
 
 object AccountGeneratorActorMaster {
 
-  def props: Props = Props[AccountGeneratorActorMaster]
+  def props(databaseService: DatabaseService): Props = Props(classOf[AccountGeneratorActorMaster], databaseService)
+
+}
+
+object AccountGeneratorActor {
+
+  def props(databaseService: DatabaseService): Props = Props(classOf[AccountGeneratorActor], databaseService)
 
 }

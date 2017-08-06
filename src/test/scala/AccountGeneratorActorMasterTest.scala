@@ -1,17 +1,16 @@
-import akka.actor.ActorSystem
-import org.scalatest.{FunSuite, FunSuiteLike}
-import akka.testkit.{TestKit, ImplicitSender}
+import akka.actor.{ActorRef, ActorSystem}
+import org.scalatest.FunSuiteLike
+import akka.testkit.{ImplicitSender, TestKit}
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.mockito.MockitoSugar
 import org.mockito.Mockito._
-import DatabaseService._
 
 
 class AccountGeneratorActorMasterTest extends TestKit(ActorSystem("test-system")) with FunSuiteLike
-  with BeforeAndAfterAll with ImplicitSender with MockitoSugar {
+  with BeforeAndAfterAll with ImplicitSender with MockitoSugar with DatabaseService {
 
-  val props = AccountGeneratorActorMaster.props
-  val ref = system.actorOf(props)
+  val databaseService: DatabaseService = mock[DatabaseService]
+  val accountGeneratorActorMasterRef: ActorRef = system.actorOf(AccountGeneratorActorMaster.props(databaseService))
 
   override protected def afterAll(): Unit = {
     system.terminate()
@@ -19,8 +18,8 @@ class AccountGeneratorActorMasterTest extends TestKit(ActorSystem("test-system")
 
   test("Testing AccountGeneratorActor which should return CusomterAccount") {
 
-
-    ref ! List("Akshansh", "B-62, Sector-56, Noida", "AkshanshJain95", "10.00")
+    when(databaseService.checkUsername("AkshanshJain95")).thenReturn(false)
+    accountGeneratorActorMasterRef ! List("Akshansh", "B-62, Sector-56, Noida", "AkshanshJain95", "10.00")
 
     expectMsgPF() {
       case (username: String, resultMsg: String) =>
@@ -31,7 +30,9 @@ class AccountGeneratorActorMasterTest extends TestKit(ActorSystem("test-system")
 
   test("Testing AccountGeneratorActor with existing username") {
 
-    ref ! List("Akshansh", "B-62, Sector-56, Noida", "Akshansh95Jain", "10.00")
+    when(databaseService.checkUsername("Akshansh95Jain")).thenReturn(true)
+
+    accountGeneratorActorMasterRef ! List("Akshansh", "B-62, Sector-56, Noida", "Akshansh95Jain", "10.00")
 
     expectMsgPF() {
       case (username: String,resultMsg: String) => assert(username == "Akshansh95Jain" &&
@@ -41,7 +42,7 @@ class AccountGeneratorActorMasterTest extends TestKit(ActorSystem("test-system")
 
   test("Testing AccountGeneratorActor with invalid list") {
 
-    ref ! List(1,2,3,4,5)
+    accountGeneratorActorMasterRef ! List(1,2,3,4,5)
 
     expectMsg("Invalid information!")
   }
