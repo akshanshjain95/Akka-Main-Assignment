@@ -37,3 +37,7 @@
 2017-08-06 00:50:14 INFO  AccountGeneratorActorMaster:14 - Checking if user exists in the database with the username Akshansh95Jain
 2017-08-06 08:31:30 INFO  AccountGeneratorActorMasterTest:14 - Checking if user exists in the database with the username Akshansh95Jain
 2017-08-06 08:32:09 INFO  AccountGeneratorActorMaster:14 - Checking if user exists in the database with the username Akshansh95Jain
+2017-08-07 01:39:57 INFO  LinkBillerToAccountActorTest:42 - In probe
+2017-08-07 01:40:39 INFO  LinkBillerToAccountActorTest:42 - In probe
+2017-08-07 01:40:39 INFO  LinkBillerToAccountActorTest:45 - Here
+2017-08-07 02:31:12 INFO  LinkBillerToAccountActorTest:44 - Here and sender is Actor[akka://test-system/system/testActor-1#1840499024]

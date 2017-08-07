@@ -5,7 +5,6 @@ import akka.util.Timeout
 import scala.concurrent.duration.DurationInt
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.Success
 
 
 class UserAccountService {
@@ -20,6 +19,13 @@ class UserAccountService {
     } yield account
 
     Future.sequence(listOfResult).map(_.toMap)
+
+  }
+
+  def linkBillerToAccount(accountNo: Long, billerName: String, billerCategory: Category.Value, linkedBillerToAccountRef: ActorRef): Future[String] = {
+
+    implicit val timeout = Timeout(10 seconds)
+    (linkedBillerToAccountRef ? (accountNo, billerName, billerCategory)).mapTo[String]
 
   }
 

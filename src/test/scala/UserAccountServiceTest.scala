@@ -35,4 +35,21 @@ class UserAccountServiceTest extends TestKit(ActorSystem("test-system")) with Fu
     ))
   }
 
+  test("Testing linking of biller and account")
+  {
+    val probe = TestProbe()
+    probe.setAutoPilot((sender: ActorRef, msg: Any) => {
+      val resturnMsg = msg match {
+        case (accountNo: Long, billerName: String, billerCategory: Category.Value) => "Successfully Linked your account with the given biller!"
+      }
+      sender ! resturnMsg
+      TestActor.KeepRunning
+    })
+
+    userAccountServiceObject.linkBillerToAccount(3L, "CarBiller", Category.car, probe.ref).map(
+      resutlMsg => assert(resutlMsg == "Successfully Linked your account with the given biller!")
+    )
+
+  }
+
 }
