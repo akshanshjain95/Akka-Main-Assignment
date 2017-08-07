@@ -1,15 +1,16 @@
+import Models.{Category, CustomerAccount}
 import akka.actor.{Actor, ActorLogging, Props}
 
 
 
-class DatabaseService extends Actor with ActorLogging with Database {
+class DatabaseServiceActor(database: Database) extends Actor with ActorLogging {
 
   override def receive: Receive = {
 
     case listOfInformation: List[String] =>
-      if(!getUserAccountMap.contains(listOfInformation(3))) {
+      if(!database.getUserAccountMap.contains(listOfInformation(3))) {
         val customerAccount = CustomerAccount(listOfInformation)
-        addCustomerAccount(customerAccount.username, customerAccount)
+        database.addCustomerAccount(customerAccount.username, customerAccount)
         sender ! (customerAccount.username, "Account created successfully!")
       }
       else{
@@ -17,9 +18,9 @@ class DatabaseService extends Actor with ActorLogging with Database {
       }
 
     case (accountNo: Long, billerName: String, billerCategory: Category.Value) =>
-      val listOfBillers = getLinkedBiller.getOrElse(accountNo , Nil)
-      if(listOfBillers.exists(_.billerCategory == billerCategory) || listOfBillers.isEmpty) {
-        linkBiller(accountNo, billerName, billerCategory)
+      val listOfBillers = database.getLinkedBiller.getOrElse(accountNo , Nil)
+      if(!listOfBillers.exists(_.billerCategory == billerCategory) || listOfBillers.isEmpty) {
+        database.linkBiller(accountNo, billerName, billerCategory)
         sender() ! "Successfully Linked your account with the given biller!"
       }
       else
@@ -27,20 +28,25 @@ class DatabaseService extends Actor with ActorLogging with Database {
           sender() ! "You are already linked to the given biller!"
         }
 
-    case username: String => sender ! getUserAccountMap(username).accountNo
+    case username: String => sender ! database.getUserAccountMap(username).accountNo
 
     case (accountNo: Long, customerName: String, salary: Double) =>
-      depositSalary(accountNo, customerName, salary)
+      log.info("Depositing salary. Currently in DatabaseServiceActor")
+      database.depositSalary(accountNo, customerName, salary)
+      sender() ! "Salary deposited successfully!"
 
-    case accountNo: Long => sender() ! getLinkedBiller.getOrElse(accountNo, Nil).map(_.billerCategory)
+    case accountNo: Long => sender() ! database.getLinkedBiller.getOrElse(accountNo, Nil).map(_.billerCategory)
 
-    case (accountNo: Long, billToPay: Double) => sender() ! payBill(accountNo, billToPay)
+    case (accountNo: Long, billToPay: Double, billerCategory: Category.Value) => log.info("Sender in database Service is " + sender())
+      val resultBool = database.payBill(accountNo, billToPay, billerCategory)
+      log.info("Received return as " + resultBool + " and seding it to sender " + sender())
+      sender() ! resultBool
   }
 
 }
 
-object DatabaseService {
+object DatabaseServiceActor {
 
-  def props: Props = Props(classOf[DatabaseService])
+  def props(database: Database): Props = Props(classOf[DatabaseServiceActor], database)
 
 }

@@ -1,12 +1,17 @@
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
+import Models.{Category, CustomerAccount, LinkedBiller}
+import org.apache.log4j.Logger
+
 import scala.collection.mutable
 import scala.collection.mutable.Map
 import scala.collection.mutable.ListBuffer
 
 
-trait Database {
+class Database {
+
+  val logger = Logger.getLogger(this.getClass)
 
   val dateFormat = new SimpleDateFormat("d-M-y")
   val currentDate = dateFormat.format(Calendar.getInstance().getTime())
@@ -54,36 +59,61 @@ trait Database {
   }
 
   def depositSalary(accountNo: Long, customerName: String, salary: Double): Unit = {
-    userAccountMap map {
-      case (username, customerAccount) =>
+    logger.info("Depositing salary of " + salary)
+    userAccountMap foreach {
+      case (username, customerAccount) => logger.info("Username = " + username + " & Customer Account = " + customerAccount)
         if (customerAccount.accountNo == accountNo) {
+          logger.info("Creating new case class and replacing old one")
           val newCustomerAccount = customerAccount.copy(initialAmount = customerAccount.initialAmount + salary)
-          (username, newCustomerAccount)
+          logger.info("New customer account is " + newCustomerAccount)
+          userAccountMap(username) = newCustomerAccount
         }
         else {
-          (username, customerAccount)
+          userAccountMap(username) = customerAccount
         }
+
     }
+
+    logger.info("Currently database is as: " + userAccountMap)
 
   }
 
-  def payBill(accountNo: Long, billToPay: Double): Boolean = {
+  def payBill(accountNo: Long, billToPay: Double, billerCategory: Category.Value): Boolean = {
 
     val initialAmount = userAccountMap.values.filter(_.accountNo == accountNo).map(_.initialAmount).toList
-    if (initialAmount.head > billToPay) {
-      userAccountMap map {
+    logger.info("Amount in the account is " + initialAmount.head)
+    if (initialAmount.head > billToPay)
+    {
+      logger.info("If condition satisfied in payBill")
+      val linkedBillerCaseClass = linkedBiller(accountNo).filter(_.billerCategory == billerCategory).head
+      val dateWhilePayingBill = dateFormat.format(Calendar.getInstance().getTime())
+      val newlinkedBillerCaseClass = linkedBillerCaseClass.copy(transactionDate = dateWhilePayingBill,
+        amount = billToPay, totalIterations = linkedBillerCaseClass.totalIterations + 1,
+        executedIterations = linkedBillerCaseClass.executedIterations + 1, paidAmount = linkedBillerCaseClass.amount + billToPay
+      )
+
+      val listOfLinkedBiller = linkedBiller(accountNo)
+      listOfLinkedBiller -= linkedBillerCaseClass
+      listOfLinkedBiller += newlinkedBillerCaseClass
+      linkedBiller(accountNo) = listOfLinkedBiller
+
+      logger.info("LinkedBiller map is as: " + linkedBiller)
+
+      userAccountMap foreach {
         case (username, customerAccount) =>
           if (customerAccount.accountNo == accountNo) {
             val newCustomerAccount = customerAccount.copy(initialAmount = customerAccount.initialAmount - billToPay)
-            (username, newCustomerAccount)
+            userAccountMap(username) = newCustomerAccount
           }
           else {
-            (username, customerAccount)
+            userAccountMap(username) = customerAccount
           }
       }
+      logger.info("Returning true")
       true
     }
     else {
+      logger.info("Returning false")
       false
     }
 

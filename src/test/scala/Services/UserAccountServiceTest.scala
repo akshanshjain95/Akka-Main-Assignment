@@ -1,8 +1,11 @@
+package Services
+
+import Models.Category
 import akka.actor.{ActorRef, ActorSystem}
-import org.scalatest.FunSuiteLike
 import akka.testkit.{ImplicitSender, TestActor, TestKit, TestProbe}
-import org.scalatest.BeforeAndAfterAll
+import org.scalatest.{BeforeAndAfterAll, FunSuiteLike}
 import scala.concurrent.ExecutionContext.Implicits.global
+
 
 
 

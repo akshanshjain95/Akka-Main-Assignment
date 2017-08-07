@@ -1,9 +1,9 @@
+import Models.CustomerAccount
 import akka.actor.{ActorRef, ActorSystem}
 import org.scalatest.FunSuiteLike
 import akka.testkit.{ImplicitSender, TestActor, TestKit, TestProbe}
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.mockito.MockitoSugar
-import org.mockito.Mockito._
 
 
 class AccountGeneratorActorTest extends TestKit(ActorSystem("test-system")) with FunSuiteLike

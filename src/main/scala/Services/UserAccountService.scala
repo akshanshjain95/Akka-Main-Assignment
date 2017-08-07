@@ -1,3 +1,6 @@
+package Services
+
+import Models.Category
 import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem}
 import akka.pattern.ask
 import akka.util.Timeout

@@ -1,6 +1,7 @@
+package Models
+
 import java.text.SimpleDateFormat
 import java.util.Calendar
-
 import akka.actor.ActorRef
 
 case class LinkedBiller( billerCategory: Category.Value, billerName: String, accountNumber: Long,

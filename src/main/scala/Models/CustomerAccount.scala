@@ -1,3 +1,5 @@
+package Models
+
 case class CustomerAccount(accountNo: Long, customerName: String,
                            address: String, username: String, initialAmount: Double)
 

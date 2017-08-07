@@ -1,5 +1,6 @@
+import Models.Category
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
-import akka.pattern.ask
+import akka.pattern.{ask, pipe}
 import akka.util.Timeout
 
 import scala.collection.mutable
@@ -12,13 +13,18 @@ class SalaryDepositorActor(databaseServiceActor: ActorRef) extends Actor with Ac
   override def receive: Receive = {
 
     case (accountNo: Long, customerName: String, salary: Double) =>
+
       databaseServiceActor.forward(accountNo, customerName, salary)
       implicit val timeout = Timeout(10 seconds)
+      log.info("Sender before ask is " + sender())
       val listOfBillers = (databaseServiceActor ? accountNo).mapTo[mutable.ListBuffer[Category.Value]]
+      log.info("Sender after is " + sender())
+      val senderInSalaryDepositor = sender().actorRef
       listOfBillers onComplete {
 
-        case Success(value) =>log.info("Sender in onComplete is " + sender())
-          value.foreach(billerCategory => context.actorOf(BillProcessingActor.props(databaseServiceActor)).forward(accountNo, billerCategory))
+        case Success(value) => log.info("Sender in onComplete is " + senderInSalaryDepositor)
+          value.foreach(billerCategory =>
+            context.actorOf(BillProcessingActor.props(databaseServiceActor)).tell((accountNo, billerCategory), senderInSalaryDepositor))
 
         case Failure(ex) => log.info("Failed while receiving listOfBillers with exception " + ex)
 
@@ -37,15 +43,19 @@ class BillProcessingActor(databaseServiceActorRef: ActorRef) extends Actor with 
   override def receive: Receive = {
 
     case (accountNo: Long, billerCategory: Category.Value) =>
+      log.info("Recieved by BillProcessingActor and the sender is " + sender())
       billerCategory match {
 
-        case Category.car => databaseServiceActorRef.forward(accountNo, CAR_BILL)
-        case Category.phone => databaseServiceActorRef.forward(accountNo, PHONE_BILL)
-        case Category.internet => databaseServiceActorRef.forward(accountNo, INTERNET_BILL)
-        case Category.electricity => databaseServiceActorRef.forward(accountNo, ELECTRICITY_BILL)
-        case Category.food => databaseServiceActorRef.forward(accountNo, FOOD_BILL)
+        case Category.car => databaseServiceActorRef.forward(accountNo, CAR_BILL, Category.car)
+        case Category.phone => databaseServiceActorRef.forward(accountNo, PHONE_BILL, Category.phone)
+        case Category.internet => databaseServiceActorRef.forward(accountNo, INTERNET_BILL,Category.internet)
+        case Category.electricity => databaseServiceActorRef.forward(accountNo, ELECTRICITY_BILL,Category.electricity)
+        case Category.food => databaseServiceActorRef.forward(accountNo, FOOD_BILL,Category.food)
 
       }
+
+    case _ => sender() ! "Invalid information received"
+
   }
 
 }

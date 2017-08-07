@@ -1,3 +1,4 @@
+import Models.Category
 import akka.actor.{ActorLogging, ActorRef, ActorSystem, Props}
 import akka.testkit.{ImplicitSender, TestActor, TestKit, TestProbe}
 import org.apache.log4j.Logger

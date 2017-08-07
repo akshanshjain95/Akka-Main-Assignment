@@ -13,8 +13,9 @@ class AccountGeneratorActor(databaseServiceActor: ActorRef) extends Actor with A
     case customerInformation: List[_] =>
       customerInformation.head match {
         case string: String =>
-          log.info("Assigning account number and forwarding it to databaseServiceActor")
-          val listOfInformation: List[String] = ((accountNumber + 1).toString :: customerInformation).map(_.toString)
+          log.info("Assigning account number and forwarding it to databaseServiceActor and currently account number is " + accountNumber)
+          accountNumber += 1
+          val listOfInformation: List[String] = ((accountNumber).toString :: customerInformation).map(_.toString)
           databaseServiceActor.forward(listOfInformation)
 
         case _ => log.info("invalid list received")

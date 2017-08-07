@@ -3,8 +3,11 @@ package Services
 import akka.actor.ActorRef
 import akka.pattern.ask
 import akka.util.Timeout
+import org.apache.log4j.Logger
+
 import scala.concurrent.duration.DurationInt
 import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 
 class SalaryDepositService {

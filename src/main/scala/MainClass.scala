@@ -1,4 +1,5 @@
-import Services.SalaryDepositService
+import Models.Category
+import Services.{SalaryDepositService, UserAccountService}
 import akka.actor.{ActorSystem, Props}
 
 import scala.concurrent.Future
@@ -9,7 +10,9 @@ object MainClass extends App {
 
   val actorSystem = ActorSystem("AccountSystemActor")
 
-  val databaseServiceActor = actorSystem.actorOf(DatabaseService.props)
+  val database = new Database
+
+  val databaseServiceActor = actorSystem.actorOf(DatabaseServiceActor.props(database))
 
   val accountGeneratorActor = actorSystem.actorOf(AccountGeneratorActor.props(databaseServiceActor))
 
