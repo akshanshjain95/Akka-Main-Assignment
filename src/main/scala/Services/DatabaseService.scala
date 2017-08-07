@@ -1,4 +1,4 @@
-import akka.actor.{Actor, ActorLogging}
+import akka.actor.{Actor, ActorLogging, Props}
 
 
 
@@ -18,7 +18,7 @@ class DatabaseService extends Actor with ActorLogging with Database {
 
     case (accountNo: Long, billerName: String, billerCategory: Category.Value) =>
       val listOfBillers = getLinkedBiller.getOrElse(accountNo , Nil)
-      if(listOfBillers.exists(_.billerCategory == billerCategory)) {
+      if(listOfBillers.exists(_.billerCategory == billerCategory) || listOfBillers.isEmpty) {
         linkBiller(accountNo, billerName, billerCategory)
         sender() ! "Successfully Linked your account with the given biller!"
       }
@@ -27,8 +27,20 @@ class DatabaseService extends Actor with ActorLogging with Database {
           sender() ! "You are already linked to the given biller!"
         }
 
-    case username: String => getUserAccountMap(username).accountNo
+    case username: String => sender ! getUserAccountMap(username).accountNo
 
+    case (accountNo: Long, customerName: String, salary: Double) =>
+      depositSalary(accountNo, customerName, salary)
+
+    case accountNo: Long => sender() ! getLinkedBiller.getOrElse(accountNo, Nil).map(_.billerCategory)
+
+    case (accountNo: Long, billToPay: Double) => sender() ! payBill(accountNo, billToPay)
   }
+
+}
+
+object DatabaseService {
+
+  def props: Props = Props(classOf[DatabaseService])
 
 }

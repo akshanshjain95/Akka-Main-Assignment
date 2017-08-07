@@ -6,7 +6,7 @@ import akka.dispatch.{BoundedMessageQueueSemantics, RequiresMessageQueue}
 class AccountGeneratorActor(databaseServiceActor: ActorRef) extends Actor with ActorLogging
   with RequiresMessageQueue[BoundedMessageQueueSemantics] {
 
-  var accountNumber = 0
+  var accountNumber = 2
 
   override def receive: PartialFunction[Any, Unit] = {
 

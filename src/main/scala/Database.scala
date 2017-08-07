@@ -11,7 +11,7 @@ trait Database {
   val dateFormat = new SimpleDateFormat("d-M-y")
   val currentDate = dateFormat.format(Calendar.getInstance().getTime())
 
-  private val linkedBiller: mutable.Map[Long, ListBuffer[LinkedBiller]] = Map(
+  private val linkedBiller: mutable.Map[Long, ListBuffer[LinkedBiller]] = mutable.Map(
     1L -> ListBuffer(
       LinkedBiller(Category.phone, "PhoneBiller", 1L, currentDate, 0.00, 0, 0, 0.00),
       LinkedBiller(Category.internet, "InternetBiller", 1L, currentDate, 0.00, 0, 0, 0.00)
@@ -22,7 +22,7 @@ trait Database {
     )
   )
 
-  private val userAccountMap: mutable.Map[String, CustomerAccount] = Map(
+  private val userAccountMap: mutable.Map[String, CustomerAccount] = mutable.Map(
     "Akshansh95Jain" -> CustomerAccount(1L, "Akshansh", "B-62, Sector-56, Noida", "Akshansh95Jain", 10.00),
     "Rahul209" -> CustomerAccount(2L, "Rahul", "B-63, Sector-56, Noida", "Rahul209", 0.00)
   )
@@ -44,11 +44,47 @@ trait Database {
 
     listOfBillers match {
 
-      case listOfBillers: List[LinkedBiller] =>
+      case listOfBillers: List[LinkedBiller] if !listOfBillers.isEmpty =>
         linkedBiller(accountNo) += linkedBillerCaseClass
 
       case Nil => linkedBiller += accountNo -> ListBuffer(linkedBillerCaseClass)
 
+    }
+
+  }
+
+  def depositSalary(accountNo: Long, customerName: String, salary: Double): Unit = {
+    userAccountMap map {
+      case (username, customerAccount) =>
+        if (customerAccount.accountNo == accountNo) {
+          val newCustomerAccount = customerAccount.copy(initialAmount = customerAccount.initialAmount + salary)
+          (username, newCustomerAccount)
+        }
+        else {
+          (username, customerAccount)
+        }
+    }
+
+  }
+
+  def payBill(accountNo: Long, billToPay: Double): Boolean = {
+
+    val initialAmount = userAccountMap.values.filter(_.accountNo == accountNo).map(_.initialAmount).toList
+    if (initialAmount.head > billToPay) {
+      userAccountMap map {
+        case (username, customerAccount) =>
+          if (customerAccount.accountNo == accountNo) {
+            val newCustomerAccount = customerAccount.copy(initialAmount = customerAccount.initialAmount - billToPay)
+            (username, newCustomerAccount)
+          }
+          else {
+            (username, customerAccount)
+          }
+      }
+      true
+    }
+    else {
+      false
     }
 
   }
