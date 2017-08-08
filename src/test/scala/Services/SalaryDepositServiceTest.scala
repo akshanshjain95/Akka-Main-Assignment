@@ -14,6 +14,10 @@ class SalaryDepositServiceTest extends TestKit(ActorSystem("test-system")) with 
   val salaryDepositorActorProbe = TestProbe()
   val salaryDepositServiceObj = new SalaryDepositService
 
+  override protected def afterAll(): Unit = {
+    system.terminate()
+  }
+
   test("Testing SalaryDepositService depositSalary method")
   {
 

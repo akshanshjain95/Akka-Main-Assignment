@@ -173,3 +173,308 @@
 2017-08-07 21:50:24 INFO  Database:86 - If condition satisfied in payBill
 2017-08-07 21:50:24 INFO  Database:99 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,7-8-2017,0.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,7-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,7-8-2017,0.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,7-8-2017,0.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,7-8-2017,200.0,1,1,200.0)))
 2017-08-07 21:50:24 INFO  Database:111 - Returning true
+2017-08-08 02:06:18 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:07:18 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:07:18 INFO  Database:76 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,50010.0))
+2017-08-08 02:16:13 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 02:16:13 INFO  Database:125 - Returning false
+2017-08-08 02:18:08 INFO  Database:94 - Amount in the account is 1000.0
+2017-08-08 02:18:08 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:18:08 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)))
+2017-08-08 02:18:08 INFO  Database:121 - Returning true
+2017-08-08 02:18:51 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:18:51 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,50000.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:18:51 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:18:51 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,50000.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,50010.0))
+2017-08-08 02:18:51 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:18:51 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:18:51 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:18:51 INFO  Database:121 - Returning true
+2017-08-08 02:18:51 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:18:51 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:18:51 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0), LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,1,1,200.0)))
+2017-08-08 02:18:51 INFO  Database:121 - Returning true
+2017-08-08 02:18:51 INFO  Database:94 - Amount in the account is 1000.0
+2017-08-08 02:18:51 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:18:51 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0), LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,1,1,200.0)))
+2017-08-08 02:18:51 INFO  Database:121 - Returning true
+2017-08-08 02:21:39 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:21:39 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,50000.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:21:39 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:21:39 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,50000.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,50010.0))
+2017-08-08 02:21:39 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:21:39 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:21:39 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:21:39 INFO  Database:121 - Returning true
+2017-08-08 02:21:39 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:21:39 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:21:39 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0), LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,1,1,200.0)))
+2017-08-08 02:21:39 INFO  Database:121 - Returning true
+2017-08-08 02:21:39 INFO  Database:94 - Amount in the account is 1000.0
+2017-08-08 02:21:39 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:21:39 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0), LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,1,1,200.0)))
+2017-08-08 02:21:39 INFO  Database:121 - Returning true
+2017-08-08 02:26:26 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:26:26 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,50000.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:26:26 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:26:26 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,50000.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,50010.0))
+2017-08-08 02:26:26 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:26:26 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:26:26 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:26:26 INFO  Database:121 - Returning true
+2017-08-08 02:26:26 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:26:26 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:26:26 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0), LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,1,1,200.0)))
+2017-08-08 02:26:26 INFO  Database:121 - Returning true
+2017-08-08 02:26:26 INFO  Database:94 - Amount in the account is 1000.0
+2017-08-08 02:26:26 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:26:26 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,1,1,0.0), LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,1,1,200.0)))
+2017-08-08 02:26:26 INFO  Database:121 - Returning true
+2017-08-08 02:28:37 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:31:53 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:31:53 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:31:53 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:31:53 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 02:31:53 INFO  Database:125 - Returning false
+2017-08-08 02:31:53 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 02:31:53 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:31:53 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 02:31:53 INFO  Database:121 - Returning true
+2017-08-08 02:32:38 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:32:38 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:32:38 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:32:38 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 02:32:38 INFO  Database:125 - Returning false
+2017-08-08 02:32:38 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 02:32:38 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:32:38 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 02:32:38 INFO  Database:121 - Returning true
+2017-08-08 02:33:26 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:33:26 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:33:26 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:33:26 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 02:33:26 INFO  Database:125 - Returning false
+2017-08-08 02:33:26 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 02:33:26 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:33:26 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 02:33:26 INFO  Database:121 - Returning true
+2017-08-08 02:47:55 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:47:55 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:48:29 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:48:29 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:48:29 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:48:29 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:48:29 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:48:29 INFO  Database:121 - Returning true
+2017-08-08 02:51:14 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:51:14 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:53:26 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:53:26 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:53:26 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:53:26 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:53:26 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:53:26 INFO  Database:121 - Returning true
+2017-08-08 02:55:12 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:55:12 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:55:12 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:55:12 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:55:12 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:55:12 INFO  Database:121 - Returning true
+2017-08-08 02:55:40 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:55:40 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:55:40 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:55:40 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:55:40 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:55:40 INFO  Database:121 - Returning true
+2017-08-08 02:57:30 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:57:30 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:57:30 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:57:30 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:57:30 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:57:30 INFO  Database:121 - Returning true
+2017-08-08 02:57:51 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:57:51 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:57:51 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:57:51 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:57:51 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:57:51 INFO  Database:121 - Returning true
+2017-08-08 02:58:20 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:58:20 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:58:20 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:58:20 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:58:20 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:58:20 INFO  Database:121 - Returning true
+2017-08-08 02:59:00 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 02:59:00 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 02:59:00 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 02:59:00 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 02:59:00 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 02:59:00 INFO  Database:121 - Returning true
+2017-08-08 03:05:35 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:05:35 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:05:35 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:05:35 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:05:35 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:05:35 INFO  Database:121 - Returning true
+2017-08-08 03:09:12 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:09:12 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:09:12 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:09:12 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:09:12 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:09:12 INFO  Database:121 - Returning true
+2017-08-08 03:12:17 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:12:17 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:12:17 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:12:17 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:12:17 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:12:17 INFO  Database:121 - Returning true
+2017-08-08 03:12:37 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:12:37 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:12:37 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:12:37 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:12:37 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:12:37 INFO  Database:121 - Returning true
+2017-08-08 03:13:22 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:13:22 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:13:22 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:13:22 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:13:22 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:13:22 INFO  Database:121 - Returning true
+2017-08-08 03:17:35 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:17:35 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:17:35 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:17:35 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:17:35 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:17:35 INFO  Database:121 - Returning true
+2017-08-08 03:17:56 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:17:56 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:17:56 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:17:56 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:17:56 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:17:56 INFO  Database:121 - Returning true
+2017-08-08 03:18:03 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:18:03 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:18:03 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:18:03 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:18:03 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:18:03 INFO  Database:121 - Returning true
+2017-08-08 03:20:35 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:20:35 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:20:35 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:20:35 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:20:35 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:20:35 INFO  Database:121 - Returning true
+2017-08-08 03:22:37 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:22:37 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,1000.0), Akshansh9195Jain -> CustomerAccount(4,Akshansh,B-62, Sector-56, Noida,Akshansh9195Jain,10.0), AkshanshJain1995 -> CustomerAccount(3,Akshansh,B-62, Sector-56, Noida,AkshanshJain1995,50010.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:22:37 INFO  Database:94 - Amount in the account is 50010.0
+2017-08-08 03:22:37 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:22:37 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,0,0,0.0), LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0)), 3 -> ListBuffer(LinkedBiller(phone,PhoneBiller,3,8-8-2017,0.0,1,1,0.0)))
+2017-08-08 03:22:37 INFO  Database:121 - Returning true
+2017-08-08 03:23:19 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:23:19 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:23:19 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:23:19 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 03:23:19 INFO  Database:125 - Returning false
+2017-08-08 03:23:19 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 03:23:19 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:23:19 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 03:23:19 INFO  Database:121 - Returning true
+2017-08-08 03:26:25 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:26:25 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:26:25 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:26:25 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 03:26:25 INFO  Database:125 - Returning false
+2017-08-08 03:26:25 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 03:26:25 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:26:25 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 03:26:25 INFO  Database:121 - Returning true
+2017-08-08 03:30:02 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:30:02 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:30:02 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:30:02 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 03:30:02 INFO  Database:125 - Returning false
+2017-08-08 03:30:02 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 03:30:02 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:30:02 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 03:30:02 INFO  Database:121 - Returning true
+2017-08-08 03:31:07 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:31:07 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 03:31:07 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 03:31:07 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 03:31:07 INFO  Database:125 - Returning false
+2017-08-08 03:31:07 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 03:31:07 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 03:31:07 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 03:31:07 INFO  Database:121 - Returning true
+2017-08-08 07:08:09 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:08:09 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:08:09 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 07:08:09 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 07:08:09 INFO  Database:125 - Returning false
+2017-08-08 07:08:09 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 07:08:09 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 07:08:09 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 07:08:09 INFO  Database:121 - Returning true
+2017-08-08 07:44:50 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:44:50 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:44:50 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 07:44:50 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 07:44:50 INFO  Database:125 - Returning false
+2017-08-08 07:44:50 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 07:44:50 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 07:44:50 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 07:44:50 INFO  Database:121 - Returning true
+2017-08-08 07:54:02 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:54:02 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:54:02 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 07:54:02 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 07:54:02 INFO  Database:125 - Returning false
+2017-08-08 07:54:02 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 07:54:02 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 07:54:02 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 07:54:02 INFO  Database:121 - Returning true
+2017-08-08 07:57:27 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:57:27 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 07:57:27 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 07:57:27 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 07:57:27 INFO  Database:125 - Returning false
+2017-08-08 07:57:27 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 07:57:27 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 07:57:27 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 07:57:27 INFO  Database:121 - Returning true
+2017-08-08 08:03:42 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:03:42 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:03:42 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 08:03:42 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 08:03:42 INFO  Database:125 - Returning false
+2017-08-08 08:03:42 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 08:03:42 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 08:03:42 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 08:03:42 INFO  Database:121 - Returning true
+2017-08-08 08:04:22 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:04:22 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:04:22 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 08:04:22 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 08:04:22 INFO  Database:125 - Returning false
+2017-08-08 08:04:22 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 08:04:22 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 08:04:22 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 08:04:22 INFO  Database:121 - Returning true
+2017-08-08 08:05:04 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:05:04 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:05:04 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 08:05:04 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 08:05:04 INFO  Database:125 - Returning false
+2017-08-08 08:05:04 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 08:05:04 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 08:05:04 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 08:05:04 INFO  Database:121 - Returning true
+2017-08-08 08:06:01 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:06:02 INFO  Database:65 - Depositing salary of 50000.0
+2017-08-08 08:06:02 INFO  Database:78 - Currently database is as: Map(Rahul209 -> CustomerAccount(2,Rahul,B-63, Sector-56, Noida,Rahul209,51000.0), JohnDoe -> CustomerAccount(100,John,America,JohnDoe,0.0), Akshansh95Jain -> CustomerAccount(1,Akshansh,B-62, Sector-56, Noida,Akshansh95Jain,10.0))
+2017-08-08 08:06:02 INFO  Database:94 - Amount in the account is 10.0
+2017-08-08 08:06:02 INFO  Database:125 - Returning false
+2017-08-08 08:06:02 INFO  Database:94 - Amount in the account is 51000.0
+2017-08-08 08:06:02 INFO  Database:96 - If condition satisfied in payBill
+2017-08-08 08:06:02 INFO  Database:109 - LinkedBiller map is as: Map(2 -> ListBuffer(LinkedBiller(food,FoodBiller,2,8-8-2017,400.0,0,0,0.0), LinkedBiller(electricity,ElectricityBiller,2,8-8-2017,300.0,1,1,600.0)), 10 -> ListBuffer(LinkedBiller(electricity,TestBiller,10,8-8-2017,0.0,0,0,0.0)), 1 -> ListBuffer(LinkedBiller(phone,PhoneBiller,1,8-8-2017,100.0,0,0,0.0), LinkedBiller(internet,InternetBiller,1,8-8-2017,200.0,0,0,0.0), LinkedBiller(electricity,TestBiller,1,8-8-2017,0.0,0,0,0.0)))
+2017-08-08 08:06:02 INFO  Database:121 - Returning true

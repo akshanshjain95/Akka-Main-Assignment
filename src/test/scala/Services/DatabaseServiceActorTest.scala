@@ -27,6 +27,10 @@ class DatabaseServiceActorTest extends TestKit(ActorSystem("test-system")) with 
     )
   )
 
+  override protected def afterAll(): Unit = {
+    system.terminate()
+  }
+
   test("Testing DatabaseServiceActor for creating an account")
   {
 
@@ -38,7 +42,7 @@ class DatabaseServiceActorTest extends TestKit(ActorSystem("test-system")) with 
     ))
 
     val customerAccount = CustomerAccount(listOfInformation)
-    doNothing().when(database).addCustomerAccount(customerAccount.username , customerAccount)
+    when(database.addCustomerAccount(customerAccount.username , customerAccount)).thenReturn(true)
 
     databaseServiceActor ! listOfInformation
 
@@ -77,7 +81,7 @@ class DatabaseServiceActorTest extends TestKit(ActorSystem("test-system")) with 
 
    when(database.getLinkedBiller).thenReturn(linkedBiller)
 
-    doNothing().when(database).linkBiller(100L, "TestingBiller", Category.phone)
+    when(database.linkBiller(100L, "TestingBiller", Category.phone)).thenReturn(true)
 
     databaseServiceActor ! (100L, "TestingBiller", Category.phone)
 
@@ -117,7 +121,7 @@ class DatabaseServiceActorTest extends TestKit(ActorSystem("test-system")) with 
   test("Testing DatabaseServiceActor for depositing salary")
   {
 
-    doNothing().when(database).depositSalary(1L, "Akshansh", 50000.00)
+    when(database.depositSalary(1L, "Akshansh", 50000.00)).thenReturn(true)
 
     databaseServiceActor ! (1L, "Akshansh", 50000.00)
 
@@ -144,9 +148,9 @@ class DatabaseServiceActorTest extends TestKit(ActorSystem("test-system")) with 
   test("Testing DatabaseServiceActor for paying bill using account number")
   {
 
-    when(database.payBill(1L, 500.00, Category.phone)).thenReturn(true)
+    when(database.payBill(1L, Category.phone)).thenReturn(true)
 
-    databaseServiceActor ! (1L, 500.00, Category.phone)
+    databaseServiceActor ! (1L, Category.phone)
 
     expectMsg(true)
 

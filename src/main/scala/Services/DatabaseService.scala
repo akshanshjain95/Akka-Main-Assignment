@@ -37,8 +37,8 @@ class DatabaseServiceActor(database: Database) extends Actor with ActorLogging {
 
     case accountNo: Long => sender() ! database.getLinkedBiller.getOrElse(accountNo, Nil).map(_.billerCategory)
 
-    case (accountNo: Long, billToPay: Double, billerCategory: Category.Value) => log.info("Sender in database Service is " + sender())
-      val resultBool = database.payBill(accountNo, billToPay, billerCategory)
+    case (accountNo: Long, billerCategory: Category.Value) => log.info("Sender in database Service is " + sender())
+      val resultBool = database.payBill(accountNo, billerCategory)
       log.info("Received return as " + resultBool + " and seding it to sender " + sender())
       sender() ! resultBool
   }

@@ -13,11 +13,15 @@ class BillProcessingActorTest extends TestKit(ActorSystem("test-system")) with F
 
   databaseServiceActor.setAutoPilot((sender: ActorRef, msg: Any) => {
     val resturnMsg = msg match {
-      case (accountNo: Long, billToPay: Double, billerCategory: Category.Value) => "Bill successfully paid"
+      case (accountNo: Long, billerCategory: Category.Value) => "Bill successfully paid"
     }
     sender ! resturnMsg
     TestActor.KeepRunning
   })
+
+  override protected def afterAll(): Unit = {
+    system.terminate()
+  }
 
   test("Testing for phone category") {
 

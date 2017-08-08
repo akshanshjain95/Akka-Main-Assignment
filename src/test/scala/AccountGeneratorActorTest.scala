@@ -11,6 +11,7 @@ class AccountGeneratorActorTest extends TestKit(ActorSystem("test-system")) with
 
   val databaseServiceProbe = TestProbe()
   val accountGeneratorActorRef: ActorRef = system.actorOf(AccountGeneratorActor.props(databaseServiceProbe.ref))
+  val customerAccount = CustomerAccount(1L, "Akshansh", "B-62, Sector-56, Noida", "AkshanshJain95", 0.00)
 
   override protected def afterAll(): Unit = {
     system.terminate()
@@ -18,17 +19,15 @@ class AccountGeneratorActorTest extends TestKit(ActorSystem("test-system")) with
 
   test("Testing AccountGeneratorActor which should return map containing status message for each account") {
 
-    val customerAccount = CustomerAccount(1L, "Akshansh", "B-62, Sector-56, Noida", "AkshanshJain95", 0.00)
+    databaseServiceProbe.setAutoPilot((sender: ActorRef, msg: Any) => {
+      val resturnMsg = msg match {
+        case listOfInformation: List[String] => (customerAccount.username, "Account created successfully!")
+      }
+      sender ! resturnMsg
+      TestActor.NoAutoPilot
+    })
 
     accountGeneratorActorRef ! List("Akshansh", "B-62, Sector-56, Noida", "AkshanshJain95", "10.00")
-
-      databaseServiceProbe.setAutoPilot((sender: ActorRef, msg: Any) => {
-        val resturnMsg = msg match {
-          case listOfInformation: List[String] => (customerAccount.username, "Account created successfully!")
-        }
-        sender ! resturnMsg
-        TestActor.KeepRunning
-      })
 
     expectMsgPF() {
       case (username: String, resultMsg: String) =>
@@ -39,21 +38,18 @@ class AccountGeneratorActorTest extends TestKit(ActorSystem("test-system")) with
 
   test("Testing AccountGeneratorActor with existing username") {
 
-    accountGeneratorActorRef ! List("Akshansh", "B-62, Sector-56, Noida", "Akshansh95Jain", "10.00")
-
     databaseServiceProbe.setAutoPilot((sender: ActorRef, msg: Any) => {
       val resturnMsg = msg match {
-        case listOfInformation: List[String] => ("Akshansh95Jain", "Username Akshansh95Jain already exists! Try again with a different username")
+        case listOfInformation: List[String] => "Username Akshansh95Jain already exists! Try again with a different username"
       }
       sender ! resturnMsg
-      TestActor.KeepRunning
+      TestActor.NoAutoPilot
     })
 
-    expectMsgPF() {
-      case (username: String,resultMsg: String) => assert(username == "Akshansh95Jain" &&
-      resultMsg == "Username Akshansh95Jain already exists! Try again with a different username")
+    accountGeneratorActorRef ! List("Akshansh", "B-62, Sector-56, Noida", "Akshansh95Jain", "10.00")
+
+    expectMsg("Username Akshansh95Jain already exists! Try again with a different username")
     }
-  }
 
   test("Testing AccountGeneratorActor with invalid list") {
 

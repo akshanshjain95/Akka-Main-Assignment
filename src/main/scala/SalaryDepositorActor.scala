@@ -34,23 +34,17 @@ class SalaryDepositorActor(databaseServiceActor: ActorRef) extends Actor with Ac
 
 class BillProcessingActor(databaseServiceActorRef: ActorRef) extends Actor with ActorLogging {
 
-  val CAR_BILL: Double = 100
-  val PHONE_BILL: Double = 200
-  val INTERNET_BILL: Double = 300
-  val ELECTRICITY_BILL: Double = 400
-  val FOOD_BILL: Double = 500
-
   override def receive: Receive = {
 
     case (accountNo: Long, billerCategory: Category.Value) =>
       log.info("Recieved by BillProcessingActor and the sender is " + sender())
       billerCategory match {
 
-        case Category.car => databaseServiceActorRef.forward(accountNo, CAR_BILL, Category.car)
-        case Category.phone => databaseServiceActorRef.forward(accountNo, PHONE_BILL, Category.phone)
-        case Category.internet => databaseServiceActorRef.forward(accountNo, INTERNET_BILL,Category.internet)
-        case Category.electricity => databaseServiceActorRef.forward(accountNo, ELECTRICITY_BILL,Category.electricity)
-        case Category.food => databaseServiceActorRef.forward(accountNo, FOOD_BILL,Category.food)
+        case Category.car => databaseServiceActorRef.forward(accountNo, Category.car)
+        case Category.phone => databaseServiceActorRef.forward(accountNo, Category.phone)
+        case Category.internet => databaseServiceActorRef.forward(accountNo, Category.internet)
+        case Category.electricity => databaseServiceActorRef.forward(accountNo, Category.electricity)
+        case Category.food => databaseServiceActorRef.forward(accountNo, Category.food)
 
       }
 
